@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/soccer/static/css/main.31d6cfe0.css",
-    "main.js": "/soccer/static/js/main.16d1b44d.js",
+    "main.js": "/soccer/static/js/main.c013b273.js",
     "index.html": "/soccer/index.html",
-    "main.16d1b44d.js.map": "/soccer/static/js/main.16d1b44d.js.map"
+    "main.c013b273.js.map": "/soccer/static/js/main.c013b273.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.16d1b44d.js"
+    "static/js/main.c013b273.js"
   ]
 }
