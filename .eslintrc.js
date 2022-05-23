@@ -26,5 +26,10 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'react/jsx-curly-spacing': 'off',
 		'array-bracket-spacing': 'off',
+		camelcase: 'off',
+		'max-len': 'off',
+		'object-curly-newline': 'off',
+		'react/jsx-indent-props': 'off',
+		'react/jsx-one-expression-per-line': 'off',
 	},
 };

@@ -1,22 +1,43 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+
 import AppRoutes from './routes';
 
+import AppContext from './AppContext';
+
+import getAllCountries from './utils/getAllCountries';
+
+import './App.css';
+
 export default function App() {
-    const [ apiToken ] = useState('52892a0c387949ee9f68c23ca1db5ebf');
+    const [ allCountries, setAllCountries ] = useState(null);
+
+    const loadAllCountries = async () => {
+        const apiKey = process.env.REACT_APP_API_KEY;
+        const countries = await getAllCountries(apiKey);
+        console.log(countries);
+
+        setAllCountries(countries.data);
+    };
+
+    const handleChooseCountry = useCallback(() => {
+
+    }, []);
+
+    const handleChangeSearch = useCallback(() => {
+
+    }, []);
 
     useEffect(() => {
-        axios('https://api.football-data.org/v4/areas/', {
-            headers: {
-                'X-Auth-Token': apiToken,
-            },
-        }).then((data) => console.log(data));
+        loadAllCountries();
     }, []);
+
+    const memoizedAppContext = useMemo(() => ({ allCountries, handleChooseCountry, handleChangeSearch }), [allCountries]);
 
     return (
         <div className="App">
-            <AppRoutes />
+            <AppContext.Provider value={ memoizedAppContext }>
+                <AppRoutes />
+            </AppContext.Provider>
         </div>
     );
 }

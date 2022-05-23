@@ -1,0 +1,11 @@
+.CountriesContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.CountriesContainer a {
+    text-decoration: none;
+}

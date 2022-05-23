@@ -1,0 +1,12 @@
+.Header {
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.Header h1 {
+    color: rgb(145, 32, 32);
+}

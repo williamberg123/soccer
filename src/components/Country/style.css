@@ -1,0 +1,20 @@
+.Country {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 7px rgb(139, 139, 139);
+}
+
+.Country h3 {
+    text-transform: uppercase;
+}
+
+.Country img {
+    width: 50px;
+}
