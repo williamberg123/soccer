@@ -10,6 +10,7 @@ import './App.css';
 
 export default function App() {
     const [ allCountries, setAllCountries ] = useState(null);
+    const [ searchedValue, setSearchedValue ] = useState('');
 
     const loadAllCountries = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
@@ -23,15 +24,23 @@ export default function App() {
 
     }, []);
 
-    const handleChangeSearch = useCallback(() => {
-
+    const handleChangeSearch = useCallback((e) => {
+        const { value } = e.target;
+        setSearchedValue(value);
     }, []);
 
     useEffect(() => {
         loadAllCountries();
     }, []);
 
-    const memoizedAppContext = useMemo(() => ({ allCountries, handleChooseCountry, handleChangeSearch }), [allCountries]);
+    const memoizedAppContext = useMemo(
+        () => (
+            {
+                allCountries, handleChooseCountry, handleChangeSearch, searchedValue,
+            }
+        ),
+        [allCountries, searchedValue],
+    );
 
     return (
         <div className="App">

@@ -31,5 +31,9 @@ module.exports = {
 		'object-curly-newline': 'off',
 		'react/jsx-indent-props': 'off',
 		'react/jsx-one-expression-per-line': 'off',
+		'react/require-default-props': 'off',
+		'react/jsx-props-no-spreading': 'off',
+		'array-callback-return': 'off',
+		'consistent-return': 'off',
 	},
 };

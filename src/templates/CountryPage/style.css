@@ -1,0 +1,14 @@
+.CountryPage .MainContainer {
+    max-width: 1000px;
+}
+
+@media (max-width: 500px) {
+    .CountryPage .Header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .CountryPage .Header h1 {
+        font-size: 1rem;
+    }
+}

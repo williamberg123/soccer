@@ -1,11 +1,14 @@
-import SearchInput from '../SearchInput';
+import PropTypes from 'prop-types';
 import './style.css';
 
-export default function Header() {
+export default function Header({ children }) {
     return (
         <header className="Header">
-            <h1>SOCCER API</h1>
-            <SearchInput />
+            { children }
         </header>
     );
 }
+
+Header.propTypes = {
+    children: PropTypes.node.isRequired,
+};

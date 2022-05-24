@@ -6,7 +6,7 @@ import './style.css';
 
 export default function Country({ country_id, country_name, country_logo }) {
     return (
-        <Link to={`/soccer/country/${country_id}`}>
+        <Link to={`/soccer/country?id=${country_id}`}>
             <div className="Country">
                 <h3>{country_name}</h3>
                 <img src={country_logo} alt={country_name} />

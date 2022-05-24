@@ -1,5 +1,5 @@
 .Country {
-    width: 700px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,4 +17,10 @@
 
 .Country img {
     width: 50px;
+}
+
+@media (max-width: 400px) {
+    .Country h3 {
+        font-size: 0.9rem;
+    }
 }

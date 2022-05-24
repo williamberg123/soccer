@@ -1,20 +1,19 @@
-import { useContext } from 'react';
-
 import Header from '../../components/Header';
 import MainContainer from '../../containers/MainContainer';
 import CountriesContainer from '../../containers/CountriesContainer';
-
-import AppContext from '../../AppContext';
+import SearchInput from '../../components/SearchInput';
 
 import './style.css';
 
 export default function Home() {
-    const { allCountries } = useContext(AppContext);
-
     return (
         <div className="Home">
-            <Header numberOfCountries={allCountries} />
+            <Header>
+                <h1>SOCCER API</h1>
+                <SearchInput />
+            </Header>
             <MainContainer>
+                <h2>PAÍSES</h2>
                 <CountriesContainer />
             </MainContainer>
         </div>

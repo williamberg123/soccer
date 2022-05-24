@@ -7,7 +7,8 @@ export default function AppRoutes() {
     return (
         <Routes>
             <Route path="/soccer/" element={ <Home /> } />
-            <Route path="/soccer/country/:countryId" element={ <CountryPage /> } />
+            <Route path="/soccer/country" element={ <CountryPage /> } />
+            <Route path="/soccer/country/competitions" element={ <CountryPage /> } />
         </Routes>
     );
 }

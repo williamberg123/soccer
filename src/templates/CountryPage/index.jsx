@@ -1,27 +1,58 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import CompetitionsContainer from '../../containers/CompetitionsContainer';
+import MainContainer from '../../containers/MainContainer';
 
+import CountryPageContext from './CountryPageContext';
 import getCountryCompetions from '../../utils/getCountryCompetions';
+
+import './style.css';
+import Header from '../../components/Header';
+import CountryInfo from '../../components/CountryInfo';
 
 export default function CountryPage() {
     const [ countryCompetitions, setCountryCompetitions ] = useState(null);
+    const [ countryInfo, setCountryInfo ] = useState(null);
 
-    const params = useParams('/soccer/country/:countryId');
+    const [ searchParams ] = useSearchParams();
 
     const loadCountryCompetions = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
-        const competitions = await getCountryCompetions(apiKey, params.countryId);
+        const competitions = await getCountryCompetions(apiKey, searchParams.get('id'));
+        console.log(competitions);
+
+        const { country_logo, country_name } = competitions.data[0];
 
         setCountryCompetitions(competitions.data);
+        setCountryInfo({ country_logo, country_name });
     };
 
     useEffect(() => {
         loadCountryCompetions();
     }, []);
 
+    const memoizedCountryPageContext = useMemo(
+        () => ({
+            countryCompetitions,
+        }),
+        [countryCompetitions],
+    );
+
     return (
         <div className="CountryPage">
-            <h1>country</h1>
+            <CountryPageContext.Provider value={ memoizedCountryPageContext }>
+                <Header>
+                    <CountryInfo
+                        {...countryInfo}
+                    />
+                    <h1>SOCCER API</h1>
+                </Header>
+                <MainContainer>
+                    <CompetitionsContainer
+                        competitions={countryCompetitions}
+                    />
+                </MainContainer>
+            </CountryPageContext.Provider>
         </div>
     );
 }

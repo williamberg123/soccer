@@ -1,0 +1,9 @@
+.CountryInfo {
+    display: flex;
+    align-items: center;
+}
+
+.CountryInfo img {
+    width: 70px;
+    margin-right: 10px;
+}

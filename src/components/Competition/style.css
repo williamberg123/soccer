@@ -1,0 +1,17 @@
+.Competition {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgb(109, 109, 109);
+    border-radius: 3px;
+}
+
+.Competition img {
+    width: 100%;
+}
+
+.Competition h3 {
+    margin: 10px 0 5px;
+}
