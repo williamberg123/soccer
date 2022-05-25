@@ -1,17 +1,21 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function TableItem(
     {
         overall_league_position, team_badge, team_name, overall_league_W,
-        overall_league_L, overall_league_D, overall_league_PTS, overall_league_GF, overall_league_GA,
+        overall_league_L, overall_league_D, overall_league_PTS, overall_league_GF,
+        overall_league_GA, team_id,
     },
 ) {
     return (
         <tr>
             <td>
-                {overall_league_position}
-                <img src={team_badge} alt={team_name} />
-                {team_name}
+                <Link to={`/soccer/team?id=${team_id}`}>
+                    {overall_league_position}
+                    <img src={team_badge} alt={team_name} />
+                    {team_name}
+                </Link>
             </td>
             <td>{overall_league_PTS}</td>
             <td>{overall_league_W}</td>
@@ -34,4 +38,5 @@ TableItem.propTypes = {
     overall_league_PTS: PropTypes.string.isRequired,
     overall_league_GF: PropTypes.string.isRequired,
     overall_league_GA: PropTypes.string.isRequired,
+    team_id: PropTypes.string.isRequired,
 };

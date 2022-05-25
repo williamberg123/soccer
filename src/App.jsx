@@ -20,10 +20,6 @@ export default function App() {
         setAllCountries(countries.data);
     };
 
-    const handleChooseCountry = useCallback(() => {
-
-    }, []);
-
     const handleChangeSearch = useCallback((e) => {
         const { value } = e.target;
         setSearchedValue(value);
@@ -36,7 +32,7 @@ export default function App() {
     const memoizedAppContext = useMemo(
         () => (
             {
-                allCountries, handleChooseCountry, handleChangeSearch, searchedValue,
+                allCountries, handleChangeSearch, searchedValue,
             }
         ),
         [allCountries, searchedValue],

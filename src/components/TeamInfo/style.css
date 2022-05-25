@@ -1,0 +1,9 @@
+.TeamInfo {
+    display: flex;
+    align-items: center;
+}
+
+.TeamInfo img {
+    width: 100px;
+    margin-right: 10px;
+}

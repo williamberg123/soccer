@@ -7,9 +7,13 @@ import StandingTable from '../../components/StandingTable';
 import RenderIf from '../../components/RenderIf';
 
 import getStanding from '../../utils/getStanding';
+import Header from '../../components/Header';
+
+import './style.css';
 
 export default function CompetitionPage() {
     const [ allTeams, setAllTeams ] = useState(null);
+    const [ leagueInfo, setLeagueInfo ] = useState(null);
     const [ searchParams ] = useSearchParams();
 
     const loadTeams = async () => {
@@ -17,7 +21,10 @@ export default function CompetitionPage() {
         const teams = await getStanding(apiKey, searchParams.get('id'));
         console.log(teams);
 
+        const { league_name, country_name } = teams.data[0];
+
         setAllTeams(teams.data);
+        setLeagueInfo({ league_name, country_name });
     };
 
     useEffect(() => {
@@ -26,6 +33,10 @@ export default function CompetitionPage() {
 
     return (
         <div className="CompetitionPage">
+            <Header>
+                <h1>{leagueInfo?.country_name}</h1>
+                <h2>{leagueInfo?.league_name}</h2>
+            </Header>
             <MainContainer>
                 <RenderIf condition={!allTeams}>
                     <Loader type="spinner-default" bgColor="#000000" size={70} />

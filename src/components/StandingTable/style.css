@@ -2,6 +2,7 @@
     width: 100%;
     font-family: 'Plus Jakarta Sans', sans-serif;
     border-collapse: collapse;
+    margin: 40px 0;
 }
 
 .StandingTable tr {
@@ -12,10 +13,16 @@
     padding: 15px 10px;
 }
 
-.StandingTable tr > td:first-child {
+.StandingTable tr > td:first-child a {
     display: flex;
     align-items: center;
     text-align: left;
+    text-decoration: none;
+    color: black;
+}
+
+.StandingTable tr > td:first-child:hover {
+    background-color: rgb(228, 228, 228);
 }
 
 .StandingTable tr > td {
