@@ -7,12 +7,12 @@ import './style.css';
 export default function CompetitionsList() {
     const { countryCompetitions } = useContext(CountryPageContext);
 
-    const competitionsChildren = countryCompetitions.map(({ league_id, ...rest }) => {
-        if (rest.league_logo.includes('.png')) {
+    const competitionsChildren = countryCompetitions.map((country) => {
+        if (country.league_logo.includes('.png')) {
             return (
                 <Competition
-                    key={league_id}
-                    {...rest}
+                    key={country.league_id}
+                    {...country}
                 />
             );
         }

@@ -1,0 +1,50 @@
+.StandingTable {
+    width: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border-collapse: collapse;
+}
+
+.StandingTable tr {
+    width: 100%;
+}
+
+.StandingTable td, .StandingTable th {
+    padding: 15px 10px;
+}
+
+.StandingTable tr > td:first-child {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.StandingTable tr > td {
+    text-align: center;
+}
+
+.StandingTable tr:nth-child(2n) {
+    background-color: rgb(240, 240, 240);
+}
+
+.StandingTable img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+@media (max-width: 550px) {
+    .StandingTable td, .StandingTable th {
+        font-size: 0.8rem;
+        padding: 15px 7px;
+    }
+
+    .StandingTable img {
+        width: 20px;
+        margin: 0 7px;
+    }
+}
+
+@media (max-width: 400px) {
+    .StandingTable td, .StandingTable th {
+        font-size: 0.7rem;
+    }
+}

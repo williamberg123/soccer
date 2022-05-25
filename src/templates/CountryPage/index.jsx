@@ -9,6 +9,7 @@ import getCountryCompetions from '../../utils/getCountryCompetions';
 import './style.css';
 import Header from '../../components/Header';
 import CountryInfo from '../../components/CountryInfo';
+import RenderIf from '../../components/RenderIf';
 
 export default function CountryPage() {
     const [ countryCompetitions, setCountryCompetitions ] = useState(null);
@@ -42,9 +43,11 @@ export default function CountryPage() {
         <div className="CountryPage">
             <CountryPageContext.Provider value={ memoizedCountryPageContext }>
                 <Header>
-                    <CountryInfo
-                        {...countryInfo}
-                    />
+                    <RenderIf condition={ !!countryInfo }>
+                        <CountryInfo
+                            {...countryInfo}
+                        />
+                    </RenderIf>
                     <h1>SOCCER API</h1>
                 </Header>
                 <MainContainer>

@@ -6,4 +6,5 @@
 .CountryInfo img {
     width: 70px;
     margin-right: 10px;
+    box-shadow: 1px 1px 7px rgb(204, 204, 204);
 }
