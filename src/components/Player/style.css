@@ -5,6 +5,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgb(179, 179, 179);
 }
 
 .Player-title {
@@ -16,6 +19,5 @@
 .Player-title img {
     width: 100px;
     aspect-ratio: 1/1;
-    box-shadow: 1px 1px 5px rgb(177, 177, 177);
     margin-bottom: 10px;
 }

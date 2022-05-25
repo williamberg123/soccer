@@ -12,6 +12,8 @@ import TeamPageContext from './TeamPageContext';
 import getTeamInfo from '../../utils/getTeamInfo';
 import TeamInfoList from '../../components/TeamInfoList';
 
+import './style.css';
+
 export default function TeamPage() {
     const [ teamInfo, setTeamInfo ] = useState(null);
 

@@ -2,13 +2,17 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-export default function Player({ goalKeeper }) {
-    const { player_image, player_name, player_age, player_number } = goalKeeper;
+export default function Player({ player }) {
+    const loadOptionalImage = (e) => {
+        e.target.setAttribute('src', 'https://apiv3.apifootball.com/badges/players/100275_gavi.jpg');
+    };
+
+    const { player_image, player_name, player_age, player_number } = player;
 
     return (
         <div className="Player">
             <div className="Player-title">
-                <img src={player_image} alt="sem foto" />
+                <img onError={ loadOptionalImage } src={player_image} alt="sem foto" />
                 <h3>{player_name}</h3>
             </div>
             <p>Camisa {player_number}</p>
@@ -18,5 +22,5 @@ export default function Player({ goalKeeper }) {
 }
 
 Player.propTypes = {
-    goalKeeper: PropTypes.instanceOf(Object).isRequired,
+    player: PropTypes.instanceOf(Object).isRequired,
 };

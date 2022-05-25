@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
 import Player from '../Player';
 
-import './style.css';
-
 export default function GoalKeepers({ goalKeepers }) {
-    const players = goalKeepers.map((goalKeeper) => <Player key={goalKeeper.player_id} goalKeeper={goalKeeper} />);
+    const players = goalKeepers.map((goalKeeper) => <Player key={goalKeeper.player_id} player={goalKeeper} />);
 
     return (
         <div className="GoalKeepers">
