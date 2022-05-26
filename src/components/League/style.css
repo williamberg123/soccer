@@ -1,4 +1,4 @@
-.Competition {
+.League {
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -8,10 +8,17 @@
     border-radius: 5px;
 }
 
-.Competition img {
+.League img {
     width: 100%;
 }
 
-.Competition h3 {
+.League h3 {
     margin: 10px 0 5px;
+}
+
+@media (max-width: 600px) {
+    .League img {
+        width: 70%;
+        margin: auto;
+    }
 }

@@ -24,7 +24,7 @@ export default function PlayerPage() {
 
     return (
         <div className="PlayerPage">
-
+            {playerInfo}
         </div>
     );
 }

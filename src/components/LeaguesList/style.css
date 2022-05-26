@@ -1,4 +1,4 @@
-.CompetitionsList {
+.LeaguesList {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 400px) {
-    .CompetitionsList {
+    .LeaguesList {
         grid-template-columns: 1;
     }
 }

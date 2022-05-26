@@ -1,16 +1,16 @@
 import { useContext } from 'react';
 import CountryPageContext from '../../templates/CountryPage/CountryPageContext';
-import Competition from '../Competition';
+import League from '../League';
 
 import './style.css';
 
-export default function CompetitionsList() {
-    const { countryCompetitions } = useContext(CountryPageContext);
+export default function LeaguesList() {
+    const { countryLeagues } = useContext(CountryPageContext);
 
-    const competitionsChildren = countryCompetitions.map((country) => {
+    const competitionsChildren = countryLeagues.map((country) => {
         if (country.league_logo.includes('.png')) {
             return (
-                <Competition
+                <League
                     key={country.league_id}
                     {...country}
                 />
@@ -19,7 +19,7 @@ export default function CompetitionsList() {
     });
 
     return (
-        <div className="CompetitionsList">
+        <div className="LeaguesList">
             {competitionsChildren}
         </div>
     );

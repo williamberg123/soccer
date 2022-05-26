@@ -7,9 +7,14 @@
     margin-bottom: 40px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px rgb(179, 179, 179);
+    box-shadow: 2px 2px 7px rgb(179, 179, 179);
     color: black;
     text-decoration: none;
+}
+
+.Player a:hover {
+    transform: scale(1.05);
+    transition: 0.4s;
 }
 
 .Player .Player-number {

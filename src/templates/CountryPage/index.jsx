@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import CompetitionsContainer from '../../containers/CompetitionsContainer';
+import LeaguesContainer from '../../containers/LeaguesContainer';
 import MainContainer from '../../containers/MainContainer';
 
 import CountryPageContext from './CountryPageContext';
-import getCountryCompetions from '../../utils/getCountryCompetions';
+import getCountryLeagues from '../../utils/getCountryLeagues';
 
 import './style.css';
 import Header from '../../components/Header';
@@ -12,18 +12,18 @@ import CountryInfo from '../../components/CountryInfo';
 import RenderIf from '../../components/RenderIf';
 
 export default function CountryPage() {
-    const [ countryCompetitions, setCountryCompetitions ] = useState(null);
+    const [ countryLeagues, setCountryLeagues ] = useState(null);
     const [ countryInfo, setCountryInfo ] = useState(null);
 
     const [ searchParams ] = useSearchParams();
 
     const loadCountryCompetions = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
-        const competitions = await getCountryCompetions(apiKey, searchParams.get('id'));
+        const leagues = await getCountryLeagues(apiKey, searchParams.get('id'));
 
-        const { country_logo, country_name } = competitions.data[0];
+        const { country_logo, country_name } = leagues.data[0];
 
-        setCountryCompetitions(competitions.data);
+        setCountryLeagues(leagues.data);
         setCountryInfo({ country_logo, country_name });
     };
 
@@ -33,9 +33,9 @@ export default function CountryPage() {
 
     const memoizedCountryPageContext = useMemo(
         () => ({
-            countryCompetitions,
+            countryLeagues,
         }),
-        [countryCompetitions],
+        [countryLeagues],
     );
 
     return (
@@ -50,8 +50,8 @@ export default function CountryPage() {
                     <h1>SOCCER API</h1>
                 </Header>
                 <MainContainer>
-                    <CompetitionsContainer
-                        competitions={countryCompetitions}
+                    <LeaguesContainer
+                        leagues={countryLeagues}
                     />
                 </MainContainer>
             </CountryPageContext.Provider>
