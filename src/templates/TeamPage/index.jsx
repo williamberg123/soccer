@@ -22,7 +22,6 @@ export default function TeamPage() {
     const loadTeamInfo = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
         const team = await getTeamInfo(apiKey, queryStrings.get('id'));
-        console.log(team);
 
         setTeamInfo(team.data[0]);
     };

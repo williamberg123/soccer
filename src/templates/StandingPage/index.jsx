@@ -11,7 +11,7 @@ import Header from '../../components/Header';
 
 import './style.css';
 
-export default function CompetitionPage() {
+export default function StandingPage() {
     const [ allTeams, setAllTeams ] = useState(null);
     const [ leagueInfo, setLeagueInfo ] = useState(null);
     const [ searchParams ] = useSearchParams();
@@ -19,7 +19,6 @@ export default function CompetitionPage() {
     const loadTeams = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
         const teams = await getStanding(apiKey, searchParams.get('id'));
-        console.log(teams);
 
         const { league_name, country_name } = teams.data[0];
 
@@ -32,7 +31,7 @@ export default function CompetitionPage() {
     }, []);
 
     return (
-        <div className="CompetitionPage">
+        <div className="StandingPage">
             <Header>
                 <h1>{leagueInfo?.country_name}</h1>
                 <h2>{leagueInfo?.league_name}</h2>

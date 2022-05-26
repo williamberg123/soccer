@@ -1,4 +1,4 @@
-.Player {
+.Player a {
     font-family: 'Plus Jakarta Sans', sans-serif;
     width: 100%;
     display: flex;
@@ -8,6 +8,14 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px rgb(179, 179, 179);
+    color: black;
+    text-decoration: none;
+}
+
+.Player .Player-number {
+    margin-left: 10px;
+    color: rgb(240, 126, 20);
+    font-weight: bold;
 }
 
 .Player-title {
@@ -20,4 +28,14 @@
     width: 100px;
     aspect-ratio: 1/1;
     margin-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+    .Player {
+        margin-bottom: 20px;
+    }
+    
+    .Player h3 {
+        font-size: 1rem;
+    }
 }

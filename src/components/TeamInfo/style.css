@@ -7,3 +7,13 @@
     width: 100px;
     margin-right: 10px;
 }
+
+@media (max-width: 500px) {
+    .TeamInfo {
+        font-size: 0.8rem;
+    }
+
+    .TeamInfo img {
+        width: 70px;
+    }
+}

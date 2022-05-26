@@ -8,12 +8,16 @@ export default function TableItem(
         overall_league_GA, team_id,
     },
 ) {
+    const loadOptionalImage = (e) => {
+        e.target.setAttribute('src', 'https://apiv3.apifootball.com/badges/7028_vimenor.jpg');
+    };
+
     return (
         <tr>
             <td>
                 <Link to={`/soccer/team?id=${team_id}`}>
                     {overall_league_position}
-                    <img src={team_badge} alt={team_name} />
+                    <img onError={ loadOptionalImage } src={team_badge} alt={team_name} />
                     {team_name}
                 </Link>
             </td>

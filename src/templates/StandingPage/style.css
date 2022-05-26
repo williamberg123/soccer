@@ -1,5 +1,5 @@
 @media (max-width: 500px) {
-    .CompetitionPage .Header {
+    .StandingPage .Header {
         flex-direction: row;
         justify-content: space-between;
     }

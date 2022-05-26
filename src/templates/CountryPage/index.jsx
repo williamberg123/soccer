@@ -20,7 +20,6 @@ export default function CountryPage() {
     const loadCountryCompetions = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
         const competitions = await getCountryCompetions(apiKey, searchParams.get('id'));
-        console.log(competitions);
 
         const { country_logo, country_name } = competitions.data[0];
 

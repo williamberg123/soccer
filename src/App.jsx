@@ -15,7 +15,6 @@ export default function App() {
     const loadAllCountries = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
         const countries = await getAllCountries(apiKey);
-        console.log(countries);
 
         setAllCountries(countries.data);
     };
