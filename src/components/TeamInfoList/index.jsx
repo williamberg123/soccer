@@ -15,10 +15,12 @@ export default function TeamInfoList() {
     const { teamInfo } = useContext(TeamPageContext);
     const { coaches, players } = teamInfo;
 
+    console.log(players);
+
     const goalKeepers = players.filter((player) => player.player_type === 'Goalkeepers');
     const defenders = players.filter((player) => player.player_type === 'Defenders');
     const midfielders = players.filter((player) => player.player_type === 'Midfielders');
-    const forwards = players.filter((player) => player.player_type === 'Midfielders');
+    const forwards = players.filter((player) => player.player_type === 'Forwards');
 
     return (
         <div className="TeamInfoList">

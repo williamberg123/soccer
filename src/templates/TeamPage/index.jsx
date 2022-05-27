@@ -23,7 +23,7 @@ export default function TeamPage() {
         const apiKey = process.env.REACT_APP_API_KEY;
         const team = await getTeamInfo(apiKey, queryStrings.get('id'));
 
-        setTeamInfo(team.data[0]);
+        setTeamInfo(team.data[team.data.length - 1]);
     };
 
     useEffect(() => {

@@ -1,0 +1,44 @@
+.PlayerPage {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.PlayerPage .player-info, .PlayerPage .team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PlayerPage h3 {
+    margin-top: 10px;
+}
+
+.PlayerPage .player-info > img {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 7px rgb(192, 192, 192);
+    aspect-ratio: 1/1;
+}
+
+
+.PlayerPage .team-info > img {
+    width: 100px;
+}
+
+.PlayerPage .MainContainer {
+    max-width: 700px;
+}
+
+@media (max-width: 500px) {
+    .PlayerPage .Header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .PlayerPage .player-info > img {
+        width: 110px;
+    }
+
+    .PlayerPage .team-info > img {
+        width: 70px;
+    }
+}

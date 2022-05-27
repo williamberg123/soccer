@@ -3,18 +3,6 @@
     margin: 30px auto;
 }
 
-.LeaguesContainer a {
-    padding: 15px;
-    margin-top: 10px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    background-color: rgb(255, 115, 0);
-    color: white;
-    border-radius: 5px;
-}
-
 .LeaguesContainer a:hover {
     transform: scale(1.05);
     transition: 0.4s;

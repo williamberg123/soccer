@@ -1,0 +1,8 @@
+.PlayerInfoList {
+    width: 100%;
+}
+
+.PlayerInfoList p {
+    margin: 30px 0;
+    font-size: 1.2rem;
+}

@@ -13,12 +13,17 @@
     padding: 15px 10px;
 }
 
+.StandingTable tr > td:first-child {
+    padding: 0;
+}
+
 .StandingTable tr > td:first-child a {
     display: flex;
     align-items: center;
     text-align: left;
     text-decoration: none;
     color: black;
+    padding: 15px 10px;
 }
 
 .StandingTable tr > td:first-child:hover {
