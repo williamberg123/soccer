@@ -20,7 +20,6 @@ export default function PlayerPage() {
     const loadPlayerInfo = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
         const info = await getPlayerInfo(apiKey, queryStrings.get('id'));
-        console.log(info);
 
         setPlayerInfo(info.data[info.data.length - 1]);
     };

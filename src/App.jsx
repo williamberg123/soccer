@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import AppRoutes from './routes';
@@ -26,6 +27,8 @@ export default function App() {
 
     useEffect(() => {
         loadAllCountries();
+        axios.get('https://apiv3.apifootball.com/?action=get_H2H&firstTeamId=2017&secondTeamId=546&APIkey=f941b709bc773f7a6f60676b05c8963d3f8a20e4f14e717ef014f1c62f84e134')
+            .then((data) => console.log(data));
     }, []);
 
     const memoizedAppContext = useMemo(

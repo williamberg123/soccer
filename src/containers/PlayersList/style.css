@@ -3,3 +3,12 @@
     display: flex;
     flex-direction: column;
 }
+
+.Goalkeepers,
+.Defenders,
+.Midfielders,
+.Forwards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

@@ -38,7 +38,7 @@
 }
 
 @media (max-width: 500px) {
-    .Player {
+    .Player a {
         margin-bottom: 20px;
     }
     

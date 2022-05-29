@@ -19,7 +19,6 @@ export default function StandingPage() {
     const loadTeams = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
         const teams = await getStanding(apiKey, searchParams.get('id'));
-        console.log(teams);
 
         if (teams.data.error) {
             window.location.href = '/soccer/error';

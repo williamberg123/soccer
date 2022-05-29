@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import LeaguesContainer from '../../containers/LeaguesContainer';
+
+import Loader from 'react-js-loader';
+
 import MainContainer from '../../containers/MainContainer';
 
 import CountryPageContext from './CountryPageContext';
@@ -10,6 +12,7 @@ import './style.css';
 import Header from '../../components/Header';
 import CountryInfo from '../../components/CountryInfo';
 import RenderIf from '../../components/RenderIf';
+import LeaguesList from '../../components/LeaguesList';
 
 export default function CountryPage() {
     const [ countryLeagues, setCountryLeagues ] = useState(null);
@@ -46,13 +49,16 @@ export default function CountryPage() {
                         <CountryInfo
                             {...countryInfo}
                         />
+                        <h1>SOCCER API</h1>
                     </RenderIf>
-                    <h1>SOCCER API</h1>
                 </Header>
                 <MainContainer>
-                    <LeaguesContainer
-                        leagues={countryLeagues}
-                    />
+                    <RenderIf condition={ !countryLeagues }>
+                        <Loader type="spinner-default" bgColor="#000000" size={70} />
+                    </RenderIf>
+                    <RenderIf condition={ !!countryLeagues }>
+                        <LeaguesList />
+                    </RenderIf>
                 </MainContainer>
             </CountryPageContext.Provider>
         </div>

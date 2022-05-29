@@ -13,6 +13,7 @@ import getTeamInfo from '../../utils/getTeamInfo';
 import TeamInfoList from '../../components/TeamInfoList';
 
 import './style.css';
+import Coach from '../../components/Coach';
 
 export default function TeamPage() {
     const [ teamInfo, setTeamInfo ] = useState(null);
@@ -41,6 +42,7 @@ export default function TeamPage() {
                 <TeamPageContext.Provider value={ memoizedTeamPageContext }>
                     <Header>
                         <TeamInfo />
+                        <Coach coach={teamInfo?.coaches[0]} />
                     </Header>
                     <MainContainer>
                         <TeamInfoList />

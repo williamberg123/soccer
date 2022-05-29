@@ -8,12 +8,13 @@
     margin-right: 10px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .TeamInfo {
-        font-size: 0.8rem;
+        font-size: 0.5rem;
     }
 
     .TeamInfo img {
-        width: 70px;
+        width: 50px;
+        margin-right: 5px;
     }
 }

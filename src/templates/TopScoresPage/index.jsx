@@ -15,11 +15,11 @@ import TopScoresList from '../../components/TopScoresList';
 export default function TopScoresPage() {
     const [ topScores, setTopScores ] = useState(null);
 
-    const [ queryStrings ] = useSearchParams();
+    const [ searchParams ] = useSearchParams();
 
     const loadTopScores = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
-        const topScoresData = await getTopScores(apiKey, queryStrings.get('id'));
+        const topScoresData = await getTopScores(apiKey, searchParams.get('id'));
 
         setTopScores(topScoresData.data);
     };

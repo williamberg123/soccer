@@ -22,8 +22,8 @@ export default function PlayerInfoList({ playerInfo }) {
             <p>Camisa {player_number}</p>
             <p>{player_goals} gols na temporada</p>
             <p>{player_assists} assistências na temporada</p>
-            <p>{player_red_cards} cartões vermelhos na temporada</p>
-            <p>{player_yellow_cards} cartões amarelos na temporada</p>
+            <p>{player_red_cards} cartões vermelhos</p>
+            <p>{player_yellow_cards} cartões amarelos</p>
             <p>
                 {
                     player_injured === 'Yes'
