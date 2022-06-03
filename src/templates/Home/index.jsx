@@ -8,12 +8,12 @@ import SearchInput from '../../components/SearchInput';
 import RenderIf from '../../components/RenderIf';
 import CountriesList from '../../components/CountriesList';
 
-import AppContext from '../../AppContext';
+import Context from '../../contexts/AppContext/context';
 
 import './style.css';
 
 export default function Home() {
-    const { allCountries } = useContext(AppContext);
+    const { allCountries } = useContext(Context);
 
     return (
         <div className="Home">

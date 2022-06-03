@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 
 import Country from '../Country';
-import AppContext from '../../AppContext';
+import Context from '../../contexts/AppContext/context';
 import toFilterCountries from '../../utils/toFilterCountries';
 
 import './style.css';
 
 export default function CountriesList() {
-    const { allCountries, searchedValue } = useContext(AppContext);
+    const { allCountries, searchedValue } = useContext(Context);
 
     const filteredCountries = toFilterCountries(allCountries, searchedValue);
 
